@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Common Wealth | Shop Manager</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/dark.css">
+	<link href="style.css" media="screen" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+	
+<header>
+	
+	<h1>The Common Wealth</h1>
+	
+		<h2>E-Commerce For Your Tabletop RPG</h2>		
+
+			<a href="index.html">Home</a>
+
+			<a href="marketplace.html">Marketplace</a>
+	
+	<div id="listen"></div>
+
+</header>
+
+<main>
+
+    <h1>The Stock Room</h1>
+	
+	<p>Once you have selected a shop you can add items to your shop from the Stock Room!</p>
+	
+	<div id="stockroom">
+	
+		<div id="01">
+			<label>Weapons</label>
+			<select id="weapons" name="Weapons" size="20"></select><br>
+			<button id="1" onclick="stockWeapons()">Add to Shop</button>
+		</div>
+		
+		<div id="02">
+			<label>Armor</label>
+			<select id="armor" name="Armor" size="20"></select><br>
+			<button id="2" onclick="stockArmor()">Add to Shop</button>
+		</div>
+		
+		<div id="03">
+			<label>Trade Goods</label>
+			<select id="goods" name="Trade Goods" size="20"></select><br>
+			<button id="3" onclick="stockGoods()">Add to Shop</button>
+		</div>
+		
+		<div id="04">
+			<label>Wands</label>
+			<select id="wands" name="Wands" size="20"></select><br>
+			<button id="4" onclick="stockWands()">Add to Shop</button>
+		</div>
+		
+		<div id="05">
+			<label>Potions</label>
+			<select id="potions" name="Potions" size="20"></select><br>
+			<button id="5" onclick="stockPotions()">Add to Shop</button>
+		</div>
+		
+		<div id="06">
+			<label>Scrolls</label>
+			<select id="scrolls" name="Scrolls" size="20"></select><br>
+			<button id="6" onclick="stockScrolls()">Add to Shop</button>
+		</div>
+		
+		<div id="07">
+			<label>Magic Armor</label>
+			<select id="magicarmor" name="MagicArmor" size="20"></select><br>
+			<button id="7" onclick="stockMA()">Add to Shop</button>
+		</div>
+		
+		<div id="08">
+			<label>Magic Weapons</label>
+			<select id="magicweapons" name="MagicWeapons" size="20"></select><br>
+			<button id="8" onclick="stockMW()">Add to Shop</button>
+		</div>
+		
+		<div id="09">
+			<label>Magic Items</label>
+			<select id="magicitems" name="MagicItems" size="20"></select><br>
+			<button id="9" onclick="stockMI()">Add to Shop</button>
+		</div>
+
+</div>
+
+<div id="newitem">
+
+    <h1>Add New Item To Stock Room</h1>
+	
+	<p>Any item you add here will be added to the Stock Room. To add an item to your shop a shop must be selected, then you can choose an item from the Stock Room.</p>
+		
+    <select id="stock" name="StockType" onchange="chooseStock()">
+        <option value="" selected disabled hidden>Select a Stock</option>
+        <option value="weapons">Weapons</option>
+        <option value="armor">Armor and Shields</option>
+        <option value="goods">Trade Goods</option>
+        <option value="wands">Wands</option>
+        <option value="potions">Potions</option>
+        <option value="scrolls">Scrolls</option>
+        <option value="magicArmor">Magic Armor</option>
+        <option value="magicWeapons">Magic Weapons</option>
+        <option value="magic">Magic Items</option>
+      </select>
+	<input id="category" type="text" placeholder="Category">
+      <input id="item" type="text" placeholder="Item Name">
+      <input id="cost" type="numeric" placeholder="Item Cost">
+      <select id="coinage">
+          <option value="pp">PP</option>
+          <option value="gp" selected="selected">GP</option>
+          <option value="ep">EP</option>
+          <option value="sp">SP</option>
+          <option value="cp">CP</option>
+      </select>
+      <input id="weight" type="text" placeholder="Weight">
+      <div id="props"></div><br>
+	  <button id="additem" onclick="storeItems()">Add new Item to Stock Room</button><br>
+</div>
+
+<div id="shops">
+	
+	<h1>Create and Manage Your Shops</h1>
+	
+	<p>Enter a unique campaign id. Your shops will be saved to this id, so don't forget it! You will give your players this id so that they can access the shops, as well.</p>
+	
+	<p>Once you've entered your campaign id, select a shop from the dropdown menu or create a new one with the New Shop button. Once a shop has been selected, you can start adding items from the Stock Room at the top of the page!</p>
+	
+	<div id="ncbutt">
+	<input id="newcamp" placeholder="New Campaign Id">
+	<button id ="bnc" onclick="newCamp()">Go</button>
+	</div>
+	<div id="cbutt">
+	<input id="camp" placeholder="Existing Campaign Id">
+	<button id="bc" onclick="getCamp()">Go</button><br>
+	</div>
+	
+	<button id="newshop" onclick="addShop()">New Shop</button>
+	
+	<div id="chooseShop">
+
+		<select id="shopDrop" onchange="displayShop()"></select>
+
+	</div>
+
+	<div id="shopTable"></div>
+
+	
+	
+</div>
+
+</main>
+
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+
+<!-- these are my app's javascript files. was getting errors if they were before the firebase stuff -->
+<script src="javascript/authentication.js"></script>
+<script src="javascript/stockroom.js" async></script>
+<script src="javascript/itemcollections.js"></script>
+<script src="javascript/shops.js"></script>
+
+
+</body>
+
+</html>

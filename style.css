@@ -1,0 +1,234 @@
+@charset "UTF-8";
+
+
+/************************************************************** 
+/
+/   start DEFAULT STYLES 
+/
+/**************************************************************/
+
+html{
+	
+	margin: 0;
+	padding: 0;
+	
+}
+
+body {
+	
+	max-width: 100%;
+
+	
+}
+
+a {
+	
+	display: inline-block;
+	background-color: #161f27;
+	color: white;
+	padding: 1rem;
+	border-radius: 0.5rem;-[]
+	
+}
+
+
+
+/************************************************************** 
+/
+/   start HEADER STYLES 
+/
+/**************************************************************/
+
+header {
+	
+	text-align: center;
+	background-image: url(images/bannersmall.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	position: relative;
+	padding: 1rem 0;
+	
+}
+
+header h1 {
+	
+	font-size: 5rem;
+}
+
+div#listen {
+	
+	margin: 0;
+	position: absolute;
+	right: 10rem;
+	top: 1rem;
+	border-style: solid;
+	border-color: white;
+	padding: 1rem;
+
+}
+
+#outbutt {
+	
+	margin: 0 1rem;
+
+}
+
+/************************************************************** 
+/
+/   start MAIN STYLES 
+/
+/**************************************************************/
+
+main {
+	
+	width: 100%;
+
+	
+	
+}
+
+main h1 {
+	
+	text-align: center;
+	
+}
+
+main h2 {
+	
+	text-align: center;
+}
+
+main p {
+	
+	text-align: center;
+	
+}
+
+select { 
+
+	display: inline;
+	
+}
+
+div#auth, div#auth2 {
+	
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	margin:0 auto;
+	
+	
+}
+
+#butts {
+	
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+button#DM, button#PC {
+	
+	
+	width:49%;
+	height: 30rem;
+	font-size: 5rem;
+	
+}
+
+div#auth input, div#auth2 input {
+	
+	display: inline;
+
+}
+
+#weapons, #armor, #goods, #wands, #scrolls, #potions, #magicarmor, #magicweapons, #magicitems {
+	
+	background-image: none;
+}
+
+#stockroom {
+	
+	text-align: center;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: none;
+}
+
+div#newitem {
+	
+	text-align: center;
+	padding: 2rem;
+		
+}
+
+div#newitem input {
+	
+	display: inline;
+}
+
+button#additem {
+	
+	text-align: center;
+}
+
+div#shops {
+	
+	text-align: center;
+	
+}
+
+#newcamp {
+	
+	display: inline;
+
+}
+
+#bnc {
+	
+	display: inline;
+	
+}
+
+#camp {
+	
+	align-self: center;
+	display: inline;
+
+	
+}
+
+#bc {
+	
+	display: inline;
+	
+}
+
+#newshop {
+	
+	display: inline;
+}
+
+#chooseShop {
+	
+	display: inline;
+
+}
+
+
+/*//////// START MEDIA QUERIES /////////////*/
+
+/*start medium screen (tablet) media query */
+@media only screen and (min-width: 48rem) {
+	
+	header {
+		
+		background-image: url(images/bannerlarge.png);
+		
+	}
+	
+} /* end media query */
+
+
+

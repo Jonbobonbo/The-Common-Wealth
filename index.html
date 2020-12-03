@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Common Wealth | Home</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/dark.css">
+	<link href="style.css" media="screen" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+<header>
+
+	<h1>The Common Wealth</h1>
+
+		<h2>E-Commerce For Your Tabletop RPG</h2>
+	
+	<div id="listen"></div>
+	
+</header>
+	
+<main>
+		
+		<h2>Please sign in to use the app.</h2>
+		
+		<div id="auth">
+						
+			<input id="email" placeholder="Enter Your Email">
+			<input id="password" placeholder="Enter Your Password">
+			<button id="signin" onclick="signIn()">Sign In</button>
+
+		</div>
+
+		<h2>Or sign up here!</h2>
+		
+		<div id="auth2">
+
+			<input id="newemail" placeholder="Enter an Email Address">
+			<input id="newpass" placeholder="Create a Password">
+			<input id="newpass2" placeholder="Confirm Password">
+			<button id="signup" onclick="signUp()">Sign Up</button>
+
+		</div>
+	
+		<h2>After you sign in, click on a giant button.</h2>
+	
+		<div id="butts">
+			
+			<button id="DM" onclick="DM()">I Want To Create And Manage Shops!</button>
+			<button id="PC" onclick="PC()">I Want To Buy Stuff!</button>
+			
+		</div>
+	
+</main>
+	
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+
+<script src="javascript/authentication.js"></script>	
+	
+</body>
+	
+</html>
